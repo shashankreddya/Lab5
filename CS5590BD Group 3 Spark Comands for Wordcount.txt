@@ -1,0 +1,1 @@
+var inputwc=sc.textFile("/user/cloudera/wordcountinput/")var newwc=inputwc.flatMap(line => line.split(" "))val wordCount = words.map(word => (word, 1)).reduceByKey{case (x, y) => x + y}.map(item=>item.swap).sortByKey(false,1).map(item=>item.swap).take(10)countOfWords.saveAsTextFile("/user/cloudera/WordCountOutput")
